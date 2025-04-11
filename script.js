@@ -40,6 +40,16 @@ $(document).ready(()=>{
         }
     });
 
+
+//scroll percentage
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = Math.round((scrollTop / scrollHeight) * 100);
+    document.getElementById('scroll-percent').textContent = `${scrolled}%`;
+  });
+
+
 //skills carousel
     const carousel = document.querySelector('.skills-carousel');
     let isDown = false;

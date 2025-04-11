@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kranky&display=swap');
 
 *{
-    --timberwolf: #dad7cdff;
-    --sage: #a3b18aff;
-    --fern-green: #588157ff;
-    --hunter-green: #3a5a40ff;
-    --brunswick-green: #344e41ff;
-    --accent-text: "Roboto Mono", monospace;
+  --timberwolf: #dad7cdff;
+  --hunyadi-yellow: #f6bd60ff;
+  --cambridge-blue: #84a59dff;
+  --light-coral: #f28482ff;
+  --accent-text: "Kranky", serif;
     background-color: black;
     margin: 0;
     padding: 0;
@@ -31,13 +31,13 @@
 
  /* scroll arrow indicator */
 
- .scroll-down {
+ /* .scroll-down {
     position: fixed;
     bottom: 35px;
     right: 30px;
     font-size: 4rem;
     font-weight: 800;
-    color: var(--timberwolf);
+    color: var(--light-coral);
     text-decoration: none;
     animation: bounce 1s infinite;
     z-index: 1000;
@@ -62,7 +62,7 @@
   }
 
   .scroll-down:hover {
-    color: var(--brunswick-green);
+    color: var(--hunyadi-yellow);
   }
 
   @media (max-width: 768px) {
@@ -70,23 +70,55 @@
         font-size: 3rem;
         right: 15px;
     }
+} */
+
+#scroll-percent {
+  position: fixed;
+  right: 20px;
+  top: 90%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-family: var(--accent-text);
+  font-weight: bolder;
+  color: var(--light-coral); /* your light brown */
+  /* background-color: rgba(132, 165, 157, 0.258); */
+  padding: 1rem;
+  z-index: 1000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* header & nav */
 .logo h1{
-    color: var(--sage);
+    color: var(--cambridge-blue);
     background-color: black;
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.logo h3{
+  color: var(--timberwolf);
+  padding-right: 1rem;
+  text-align: right;
+  font-family: var(--accent-text);
+  font-size: 1rem;
 }
 /* NAVBAR */
 .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
     height: 100px;
     padding: 0 1rem;
     position: relative;
     background-color: black;
     z-index: 10;
+    border-top: 3px solid var(--light-coral);
+    border-bottom: 3px solid var(--cambridge-blue);
   }
 
   .sticky {
@@ -109,13 +141,20 @@
     height: 22px;
     cursor: pointer;
     z-index: 1000;
+    /* padding: 1rem; */
+    margin: 1rem;
   }
 
   .hamburger-menu .bar {
     height: 3px;
     width: 100%;
-    background-color: var(--sage);
+    background-color: var(--light-coral);
     border-radius: 2px;
+  }
+
+
+  .bar:nth-child(2){
+    background-color: var(--cambridge-blue);
   }
 
   /* NAV MENU - Hidden by default */
@@ -131,7 +170,7 @@
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
-    border: 3px dashed var(--hunter-green);
+    border: 3px dashed var(--cambridge-blue);
   }
 
   .nav-menu.active {
@@ -208,7 +247,7 @@
   .skills-list li {
     white-space: nowrap;
     font-family: var(--accent-text);
-    color: var(--sage);
+    color: var(--hunyadi-yellow);
     font-size: 1.8rem;
 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -284,7 +323,10 @@
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
-    border: 2px solid var(--fern-green);
+    border-bottom: 4px dotted black;
+    filter: contrast(1.5);
+    filter:saturate(1);
+    background-color: var(--light-coral);
   }
 
   .about {
@@ -296,7 +338,7 @@
 
   .about h1{
     font-size: 2rem;
-    color: var(--timberwolf);
+    color: var(--hunyadi-yellow);
     text-align: left;
     padding-left: 1rem;
   }
@@ -308,7 +350,7 @@
     padding-left: .7rem;
     font-style: italic;
     text-align: justify;
-    color: var(--sage);
+    color: var(--cambridge-blue);
   }
 
   .about h6 {
@@ -332,7 +374,7 @@
   }
 
   .about-des h4{
-    color: var(--fern-green);
+    color: var(--light-coral);
     padding: 1rem;
     font-size: 1.5rem;
 
@@ -341,7 +383,7 @@
   .outer-list {
     list-style: none;
     padding-left: 20px;
-    border-left: var(--hunter-green) 3px solid;
+    border-left: var(--cambridge-blue) 3px solid;
   }
 
   .milestone{
@@ -360,7 +402,7 @@
 
   .about-list{
     list-style: none;
-    border-left: var(--brunswick-green) 3px dotted;
+    border-left: var(--hunyadi-yellow) 3px dotted;
     padding-left: 1rem;
   }
 
@@ -414,11 +456,12 @@
 
   .resume-download button {
     background-color: black;
-    border: 2px solid var(--fern-green);
+    border: 2px solid var(--cambridge-blue);
     color: var(--timberwolf);
     font-family: var(--accent-text);
     /* border: none; */
     padding: 1rem;
+    width: 13rem;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 1rem;
@@ -428,7 +471,8 @@
   }
 
   .resume-download button:hover {
-    background-color: var(--hunter-green);
+    background-color: var(--cambridge-blue);
+    color: black;
   }
 
   .resume-download p{
@@ -437,8 +481,9 @@
   }
 
   .resume-download p a {
-    color: var(--fern-green);
+    color: var(--light-coral);
     text-decoration: none;
+    font-weight: bolder;
     font-family: var(--accent-text);
     font-size: 1.2rem;
     padding-top: 1rem;
@@ -607,7 +652,7 @@
     width: 50vw;
     padding: 1rem 0;
     cursor: grab;
-    border-top: 2px dotted var(--brunswick-green);
+    border-top: 2px dotted var(--light-coral);
   }
 
   .p-s-list {
@@ -629,7 +674,8 @@
   .p-s-list li{
     /* white-space: nowrap; */
     font-family: var(--accent-text);
-    color: var(--sage);
+    color: var(--cambridge-blue);
+    font-weight: bolder;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
@@ -685,7 +731,7 @@
 }
 
 .style-guide button{
-    border: 2px solid var(--timberwolf);
+    border: 2px solid var(--cambridge-blue);
     padding: 1rem;
     cursor: pointer;
     margin: 1rem;
@@ -693,8 +739,12 @@
     box-shadow: 0 4px 8px 0 rgba(207, 235, 190, 0.1), 0 6px 20px 0 rgba(72, 152, 102, 0.19);
 }
 
+.style-guide button ::before{
+  border: 2px solid var(--light-coral);
+}
+
 .style-guide button p{
-    color: var(--sage);
+    color: var(--timberwolf);
     padding: 1rem;
     text-transform: uppercase;
 }
@@ -706,6 +756,8 @@
 
 .style-guide button:hover{
     transform: scale(1.2);
+    /* background-color: var(--sage); */
+    border: 2px solid var(--hunyadi-yellow);
 }
 
 /* Logo & Digital Designs */
@@ -735,7 +787,7 @@
     border-radius: 1rem;
     background-color: black;
     padding: 0.5rem;
-    border: 2px solid var(--timberwolf);
+    border: 5px dotted  rgba(218, 215, 205, 0.426);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -763,8 +815,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: black; /* translucent overlay */
-    color: var(--timberwolf);
+    background: rgba(0, 0, 0, 0.664); /* translucent overlay */
+    color: var(--cambridge-blue );
     padding: 1.5rem;
     font-size: 0.9rem;
     text-align: center;
@@ -803,7 +855,7 @@
     border-radius: 1rem;
     background-color: black;
     padding: 0.5rem;
-    border: 2px solid var(--timberwolf);
+    border: 5px dotted  rgba(218, 215, 205, 0.426);;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -826,20 +878,7 @@
 }
 
 /* Caption Styling */
-.caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: black; /* translucent overlay */
-    color: var(--timberwolf);
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
+
 
 /* Caption Display on Hover */
 .illust-gallery .display-item:hover .caption {
