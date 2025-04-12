@@ -79,3 +79,4 @@ window.addEventListener('scroll', () => {
         const walk = (x - startX) * 2;
         carousel.scrollLeft = scrollLeft - walk;
     });
+

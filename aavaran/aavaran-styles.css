@@ -34,6 +34,13 @@
 }
 
  /* scroll arrow indicator */
+ #scroll-img{
+    position: fixed;
+    right: 25px;
+    top: 85%;
+    transform: translateY(-50%);
+  }
+
  #scroll-percent {
     position: fixed;
     right: 20px;
@@ -43,7 +50,7 @@
     font-family: var(--accent-text);
     font-weight: bolder;
     color: var(--light-coral); /* your light brown */
-    /* background-color: rgba(132, 165, 157, 0.258); */
+    background-color: transparent;
     padding: 1rem;
     z-index: 1000;
     border-radius: 50%;
@@ -358,3 +365,6 @@ li span{
     opacity: 1;
     filter: blur(0);
   }
+
+
+  
