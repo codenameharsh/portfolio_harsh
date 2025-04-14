@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Kranky&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
 
 *{
     --timberwolf: #dad7cdff;
@@ -11,7 +13,7 @@
     --clay-beige: #faedcdff;
     --rustic-sienna: #d4a373ff;
     --maroon-fig: #49131cff;
-    --accent-text: "Kranky", serif;
+    --accent-text: "Yatra One", system-ui;
     background-color: black;
     margin: 0;
     padding: 0;
@@ -338,7 +340,7 @@ ol li{
 }
 
 li span{
-    color: var(--light-coral);
+  color: var(--cambridge-blue);
 }
 
 .project-section{
@@ -349,13 +351,66 @@ li span{
     line-height: 2rem;
 }
 
-
+@media (max-width: 1024px) {
+    .case-study-intro,
+    .project-section {
+      width: 80vw;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .case-study-intro,
+    .project-section {
+      width: 90vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .case-study-intro,
+    .project-section {
+      width: 95vw;
+      padding: 0.5rem;
+    }
+    .case-study-intro {
+      line-height: 2.5rem;
+    }
+    .project-section {
+      line-height: 1.8rem;
+    }
+  }
 
 
 
 /* gallery */
-
-.reveal {
+/* gallery grid */
+.gallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-container {
+    width: 60vw;
+    column-count: 4;
+    column-gap: 1rem;
+    padding: 2rem;
+  }
+  
+  .gallery-item {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-color: black;
+    padding: 0.5rem;
+    border: 2px solid var(--hunyadi-yellow);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .reveal {
     opacity: 0;
     filter: blur(10px);
     transition: opacity 0.6s ease-out, filter 0.6s ease-out;
@@ -364,6 +419,118 @@ li span{
   .reveal.active {
     opacity: 1;
     filter: blur(0);
+  }
+  
+  .gallery-item img {
+    align-items: center;
+    justify-content: center;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Caption Overlay */
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: var(--timberwolf);
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .gallery-item:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 1024px) {
+    .gallery-container {
+      column-count: 3;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-container {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-container {
+      column-count: 1;
+      padding: 1rem;
+    }
+    .gallery-item {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  
+  /* Footer Styling */
+  footer{
+    border-top: 3px solid var(--hunyadi-yellow);
+    border-bottom: 3px solid var(--cambridge-blue);
+    margin-bottom: 0;
+   }
+  
+  .footer {
+    background-color: var(--tangerine); 
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+    position: relative; /* Change position to relative for better layout control */
+    z-index: 1;
+  }
+  
+  .footer p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: var(--timberwolf); /* Lighter grey text */
+  }
+  
+  .footer a {
+    color: var(--light-coral); /* Light brown color for links */
+    text-decoration: none;
+    margin: 0 15px; /* Add more space between the links */
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  .footer a:hover {
+    color: #fff; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover for better interactivity */
+    transform: translateY(-2px); /* Slight hover effect for the links */
+  }
+  
+  .footer a:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .footer p {
+      font-size: 0.9rem; /* Adjust text size on smaller screens */
+    }
+  
+    .footer a {
+      font-size: 1rem;
+      margin: 0 8px; /* Reduce spacing between links on smaller screens */
+    }
   }
 
 
