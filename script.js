@@ -80,3 +80,16 @@ window.addEventListener('scroll', () => {
         carousel.scrollLeft = scrollLeft - walk;
     });
 
+//galler scroll on reveal
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('active');
+        }, index * 100); // stagger delay
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
