@@ -70,7 +70,7 @@
     padding-bottom: 0;
 }
 
-.logo h2{
+.logo h3{
     color: var(--timberwolf);
     font-family: var(--accent-text);
     font-size: 1rem;

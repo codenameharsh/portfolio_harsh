@@ -409,6 +409,8 @@
 
 }
 
+
+
 .photo-container img {
     width: 150px;
     height: 150px;
@@ -452,10 +454,27 @@
     padding: .5rem;
   }
 
-  .about-intro{
+  .about-intro,
+  .about-outro{
     text-align: justify;
     line-height: 1.7rem;
     font-size: 1rem;
+  }
+
+  .about-intro span{
+    font-style: italic;
+    color: var(--hunyadi-yellow);
+    font-weight: 300;
+  }
+
+  .about-outro{
+    padding-top:1rem ;
+  }
+
+  .about-outro span{
+    font-style: italic;
+    color: var(--hunyadi-yellow);
+    font-weight: 300;
   }
 
   .about-des {
@@ -933,14 +952,14 @@
   box-sizing: border-box;
 }
 
-.logo-gallery,
-.illust-gallery {
-  column-count: 4;
+.logo-gallery {
+  column-count: 2;
   column-gap: 0.5rem;
 }
 
 .illust-gallery {
   column-count: 2;
+  column-gap: 0.5rem;
 }
 
 /* Gallery Items */
